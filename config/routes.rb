@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :artists
 
+  resources :users
+  resources :sessions, only: [:new, :create]
   # You can have the root of your site routed with "root"
   root 'users#index'
  
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'artists/index' => 'artists#index'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
