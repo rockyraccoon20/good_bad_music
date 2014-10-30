@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030141710) do
+ActiveRecord::Schema.define(version: 20141030143634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,16 @@ ActiveRecord::Schema.define(version: 20141030141710) do
     t.datetime "updated_at"
   end
 
-  create_table "opinons", force: true do |t|
-    t.integer "user_id"
-    t.integer "artist_id"
-    t.boolean "like"
+  create_table "opinions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "artist_id"
+    t.boolean  "like"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "opinions", ["artist_id"], name: "index_opinions_on_artist_id", using: :btree
+  add_index "opinions", ["user_id"], name: "index_opinions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string "name"

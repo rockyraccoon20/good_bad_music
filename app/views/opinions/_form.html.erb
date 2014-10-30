@@ -1,0 +1,27 @@
+<%= form_for([@opinion.artist, @opinion]) do |f| %>
+  <% if @opinion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
+
+      <ul>
+      <% @opinion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :artist_id %>
+
+  <div>
+    <h1> <%= @opinion.artist.name %></h1>
+  </div>
+
+  <%= f.label :like %>
+  <%= f.check_box :like %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

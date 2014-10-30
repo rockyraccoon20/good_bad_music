@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @opinion.user.email %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @opinion.artist.name %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @opinion.like %>
+</p>
+
+<%= link_to 'Edit', edit_artist_opinion_path(@opinion.artist, @opinion) %> |
+<%= link_to 'Back', artist_opinions_path(@opinion.artist) %>
