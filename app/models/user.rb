@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+	has_many :opinions
+	has_many :artists, through: :opinions
+	
 	# Add save handlers for formatting data
 	before_create :create_remember_token
 	before_save :normalize_fields
