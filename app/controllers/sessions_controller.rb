@@ -11,7 +11,7 @@ skip_before_action :require_signin, only: [:new, :create]
 		# Test if the user was found and authenticated
 		if user && user.authenticate(params[:session][:password])
 			sign_in(user)
-			redirect_back_or new_artist_opinion_path
+			redirect_back_or new_artist_opinion_path(Artist.all.sample)
 		else
 			flash[:error] = "Invalid email/password"
 			redirect_to new_session_path

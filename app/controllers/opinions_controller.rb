@@ -20,6 +20,7 @@ class OpinionsController < ApplicationController
 
   # GET /opinions/1/edit
   def edit
+    @opinion
   end
 
   # POST /opinions
@@ -41,6 +42,7 @@ class OpinionsController < ApplicationController
   # PATCH/PUT /opinions/1
   # PATCH/PUT /opinions/1.json
   def update
+
     respond_to do |format|
       if @opinion.update(opinion_params)
         format.html { redirect_to @opinion, notice: 'Opinion was successfully updated.' }

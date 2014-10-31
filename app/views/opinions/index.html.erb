@@ -16,9 +16,9 @@
         <td><%= opinion.user %></td>
         <td><%= opinion.artist %></td>
         <td><%= opinion.like %></td>
-        <td><%= link_to 'Show', opinion %></td>
-        <td><%= link_to 'Edit', edit_opinion_path(opinion) %></td>
-        <td><%= link_to 'Destroy', opinion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', new_artist_opinion_path %></td>
+        <td><%= link_to 'Edit', edit_artist_opinion_path %></td>
+        <td><%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Opinion', new_opinion_path %>
+<%= link_to 'New Opinion', new_artist_opinion_path %>
